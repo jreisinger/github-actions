@@ -1,9 +1,6 @@
-name: go-example
+name: go workflow test
 
 on: [push]
-
-permissions:
-  contents: write
 
 jobs:
   go:

@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("go workflow example")
+	fmt.Println("go workflow test")
 }
