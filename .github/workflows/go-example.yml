@@ -1,0 +1,10 @@
+name: go-example
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  go:
+    uses: jreisinger/github-actions/.github/workflows/go.yml@main
