@@ -1,4 +1,4 @@
-name: go workflows test
+name: go workflows example
 
 on: [push]
 
