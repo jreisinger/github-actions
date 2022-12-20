@@ -10,4 +10,4 @@ jobs:
       - go
     uses: jreisinger/github-actions/.github/workflows/go-releaser.yml@main
     secrets:
-      PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
