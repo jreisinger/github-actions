@@ -2,10 +2,6 @@ name: go-releaser
 
 on:
   workflow_call:
-    secrets:
-      PUBLIC_REPO_TOKEN:
-        description: "public repo token, needed to push to brew tap"
-        required: false
 
 jobs:
   release:
