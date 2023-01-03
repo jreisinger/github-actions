@@ -1,4 +1,4 @@
-name: test, scan and release a Go project
+name: test, scan and release
 
 on: [push]
 
