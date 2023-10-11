@@ -2,12 +2,6 @@ name: go-release
 
 on:
   workflow_call:
-    inputs:
-      main:
-        description: "main.go location"
-        default: "."
-        required: false
-        type: string
 
 jobs:
   release:
@@ -26,6 +20,5 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --rm-dist
-          main: ${{ inputs.main }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
