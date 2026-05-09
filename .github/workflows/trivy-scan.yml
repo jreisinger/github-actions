@@ -1,4 +1,4 @@
-name: go-test-scan
+name: trivy-scan
 
 on:
   workflow_call:
