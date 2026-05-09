@@ -10,11 +10,11 @@ on:
 
 jobs:
   go-test:
-    uses: jreisinger/github-actions/.github/workflows/go-test.yml@main
+    uses: jreisinger/github-actions/.github/workflows/go-test.yml@v1.0.0
   trivy-scan:
-    uses: jreisinger/github-actions/.github/workflows/trivy-scan.yml@main
+    uses: jreisinger/github-actions/.github/workflows/trivy-scan.yml@v1.0.0
   go-release:
     needs:
       - go-test
       - trivy-scan
-    uses: jreisinger/github-actions/.github/workflows/go-release.yml@main
+    uses: jreisinger/github-actions/.github/workflows/go-release.yml@v1.0.0
