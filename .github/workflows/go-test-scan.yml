@@ -5,7 +5,7 @@ on:
     inputs:
       go-version:
         description: "go version"
-        default: "1.24"
+        default: "1.26"
         required: false
         type: string
 
@@ -13,39 +13,32 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: checkout
-        uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      -
-        name: setup go
-        uses: actions/setup-go@v5
+      - name: setup go
+        uses: actions/setup-go@v6
         with:
-          go-version:  ${{ inputs.go-version }}
-      -
-        name: go mod tidy
+          go-version: ${{ inputs.go-version }}
+      - name: go mod tidy
         run: go mod tidy
-      -
-        name: go test
-        run: go test -v ./...
-      -
-        name: go vet
+      - name: go test
+        run: go test -race -v ./...
+      - name: go vet
         run: go vet ./...
   scan:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: checkout
-        uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      -
-        name: trivy scan
-        uses: aquasecurity/trivy-action@master
+      - name: trivy scan
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
+          scan-type: "fs"
+          scan-ref: "."
           exit-code: "1"
           ignore-unfixed: true
           severity: "CRITICAL,HIGH"
